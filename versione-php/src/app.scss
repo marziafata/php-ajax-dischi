@@ -1,0 +1,58 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+    background-color: #393939;
+}
+
+
+.container {
+    width: 1070px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #272727;
+    img {
+        height: 100px;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+    div.cd {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 200px;
+        padding: 20px;
+        margin: 10px 20px;
+        height: 360px;
+        width: 200px;
+        background: #525252;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #272727;
+        img {
+            max-width: 160px;
+        }
+        h3 {
+            margin: 20px 0;
+            color: white;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+        span.author {
+            color: #c6c6c6;
+            font-size: 20px;
+        }
+        span.year {
+            color: #c6c6c6;
+        }
+    }
+}
