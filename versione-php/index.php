@@ -1,4 +1,6 @@
-<?php include 'dischi.php'; ?>
+<?php
+include 'dischi.php';
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -13,12 +15,14 @@
             </div>
         </header>
         <main class="container">
-            <div class="cd">
-                <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="New Jersey">
-                <h3>New Jersey</h3>
-                <span class="author">Bon Jovi</span>
-                <span class="year">1988</span>
-            </div>
+            <?php foreach ($dischi as $disco) { ?>
+                <div class="cd">
+                    <img src="<?php  echo $disco['poster'];?>" alt="<?php  echo $disco['title'];?>">
+                    <h3><?php  echo $disco['title'];?></h3>
+                    <span class="author"><?php  echo $disco['author'];?></span>
+                    <span class="year"><?php  echo $disco['year'];?></span>
+                </div> <?php
+            } ?>
         </main>
 
 
