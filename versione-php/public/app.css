@@ -10932,12 +10932,6 @@ body {
   background-color: #393939;
 }
 
-.container {
-  width: 1070px;
-  height: 100%;
-  margin: 0 auto;
-}
-
 header {
   background-color: #272727;
 }
@@ -10964,7 +10958,7 @@ main div.cd {
   margin: 10px 20px;
   height: 360px;
   width: 200px;
-  background: #525252;
+  background-color: #525252;
   text-align: center;
   border-radius: 10px;
   box-shadow: 5px 5px 10px #272727;
