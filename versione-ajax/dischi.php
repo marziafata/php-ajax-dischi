@@ -72,4 +72,9 @@ $dischi = [
         'year' => '1987'
     ]
 ];
+
+header('content-Type: application/json');
+
+echo json_encode($database);
+
 ?>
