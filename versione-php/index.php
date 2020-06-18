@@ -27,6 +27,6 @@ include 'dischi.php';
 
 
         <!-- javascript e jquery -->
-        <script src="public/app.js" charset="utf-8"></script></body>
+        <script src="../public/app.js" charset="utf-8"></script></body>
     </body>
 </html>

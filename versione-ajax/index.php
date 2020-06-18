@@ -1,11 +1,10 @@
-<?php
-include 'dischi.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Dischi PHP</title>
+        <title>Dischi Ajax</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
         <link rel="stylesheet" href="../public/app.css">
     </head>
     <body>
@@ -15,18 +14,21 @@ include 'dischi.php';
             </div>
         </header>
         <main class="container">
-            <?php foreach ($dischi as $disco) { ?>
-                <div class="cd">
-                    <img src="<?php  echo $disco['poster'];?>" alt="<?php  echo $disco['title'];?>">
-                    <h3><?php  echo $disco['title'];?></h3>
-                    <span class="author"><?php  echo $disco['author'];?></span>
-                    <span class="year"><?php  echo $disco['year'];?></span>
-                </div> <?php
-            } ?>
+            
         </main>
 
+        <!-- Handlebars     -->
+        <script id="entry-template" type="text/x-handlebars-template">
+            <div class="cd">
+                <img src="{{copertina}}" alt="{{titolo}}">
+                <h3>{{titolo}}</h3>
+                <span class="author">{{autore}}</span>
+                <span class="year">{{anno}}</span>
+            </div>
+        </script>
 
         <!-- javascript e jquery -->
-        <script src="public/app.js" charset="utf-8"></script></body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../public/app.js" charset="utf-8"></script></body>
     </body>
 </html>
