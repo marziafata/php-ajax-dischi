@@ -10989,27 +10989,39 @@ $(document).ready(function () {
     //percorso file che contiene l'array di dati che mi serve (se non funziona potrei diver scrivere il percorso a partire da localhost)
     'method': 'GET',
     'success': function success(data) {
-      //ciclo l'array per tirare fuori i singoli elementi
-      for (var index = 0; index < data.length; index++) {
-        //salvo l'elemento corrente in una variabile
-        var element = data[index]; //creo l'oggetto context che contiene le proprietà (compilate con la dot notation) da dare ad Handlebars per compilare le card
-
-        var context = {
-          "copertina": element.poster,
-          "titolo": element.title,
-          "autore": element.author,
-          "anno": element.year
-        }; // Creo la variabile delle card che contengono il template compilato con handlebars
-
-        var disco = template(context); //appendo le card al container già creato
-
-        $('main.container').append(disco);
-      }
+      gestisci_dati(data);
     },
     'error': function error() {
       console.log('Si è verificato un errore!');
     }
-  });
+  }); //funzione che cicla tutti i dischi contenuti nell'array
+  //parametro => array dei dischi
+
+  function gestisci_dati(dischi) {
+    //ciclo l'array per tirare fuori i singoli elementi
+    for (var index = 0; index < dischi.length; index++) {
+      //salvo l'elemento corrente in una variabile
+      var element = dischi[index]; //richiamo la funzione disegna card passando come parametro l'elemento corrente
+
+      disegna_card(element);
+    }
+  } // funzione per disegnare la card in pagina
+  // parametro => il singolo disco (oggetto)
+
+
+  function disegna_card(disco) {
+    //creo l'oggetto context che contiene le proprietà (compilate con la dot notation) da dare ad Handlebars per compilare le card
+    var context = {
+      "copertina": disco.poster,
+      "titolo": disco.title,
+      "autore": disco.author,
+      "anno": disco.year
+    }; // Creo la variabile delle card che contengono il template compilato con handlebars
+
+    var html = template(context); //appendo le card al container già creato
+
+    $('main.container').append(html);
+  }
 });
 
 /***/ }),
